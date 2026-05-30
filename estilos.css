@@ -1,0 +1,41 @@
+/*--------------- ESTILO BASE DEL PROYECTO ---------------*/
+
+/*--- Cuerpo general de la pantalla ---*/
+body {
+    background-color: #f1f5f9; /* color de fondo*/
+    margin: 0;                 /* Elimina los márgenes por defecto del navegador */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;   /* fuente de letra */
+}
+
+/*--- Contenedor principal limitado a 1440px ---*/
+#contenedor {
+    max-width: 1440px;         /* ancho de la página por defecto a 1440px */
+    width: 100%;               /* Ocupa el 100% en las pantallas*/
+    margin: 0 auto;            /* Centra horizontalmente todo el bloque en la pantalla */
+    border-radius: 0px;        /* Fuerza todos los bordes sean rectangulares */
+    min-height: 100vh;         /* Asegura que el fondo ocupe todo el alto de la pantalla */
+    background-color: white; /* color de fondo */
+}
+
+/*--- Marco superior ---*/
+#marco-superior {
+    background-color: #4fd44a; /* color de fondo*/
+    color: white;            /* color del texto */
+    padding-top: 2.5rem;       /* Espaciado interno superior amplio para dar tamaño considerable */
+    padding-bottom: 2.5rem;    /* Espaciado interno inferior amplio para mantener la simetría */
+    padding-left: 1.5rem;      /* Espacio en el borde izquierdo para separar el título del límite */
+    padding-right: 1.5rem;     /* Espacio en el borde derecho para proteger los márgenes visuales */
+    display: flex;             /* Activa el modelo de caja flexible para alinear el título */
+    align-items: center;       /* Centra el título verticalmente en la parte central del marco */
+    justify-content: flex-start; /* Alinea el título firmemente hacia el lado izquierdo */
+}
+
+/*--- Título principal de la aplicación ---*/
+.titulo-principal {
+    font-size: 1.875rem;       /* Tamaño de fuente*/
+    font-weight: 700;          /* Aplica texto en negrita */
+    letter-spacing: 0.05em;    /* Separa sutilmente las letras*/
+    margin: 0;                 /* Remueve márgenes automáticos*/
+}
+
+/*----------------------------------------------------------------------------------------------------------*/
