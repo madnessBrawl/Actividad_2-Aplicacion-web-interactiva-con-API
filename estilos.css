@@ -1,8 +1,53 @@
 /*--------------- ESTILO BASE DEL PROYECTO ---------------*/
 
+/*
+////////////////////// Variables(CUSTOM PROPERTIES)//////////////////////
+*/
+
+:root {
+    /* Paleta por defecto - Modo Claro */
+    --color-fondo-pantalla: #f1f5f9;
+    --color-fondo-bloque: white;
+    --color-fondo-header: #4fd44a;
+    --color-texto-bienvenida: #1e293b;
+    --color-texto-subtitulo: #64748b;
+    --color-cuadro-de-login: #4fd44a;
+    --color-caja-campos: #e8f1df;
+    --color-etiqueta: #374151;
+    --color-input-fondo: white;
+    --color-input-borde: #cbd5e1;
+    --color-boton-fondo: #0f172a;
+    --color-boton-texto: #ffffff;
+    
+    /* Variable de animación para la transición fluida */
+    --transicion-fluida: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+body.dark-mode {
+    /* Paleta alternativa Modo Oscuro */
+    --color-fondo-pantalla: #020617;  /* Fondo exterior negro/azul profundo */
+    --color-fondo-bloque: #0f172a;    /* Contenedor central gris oscuro moderno */
+    --color-fondo-header: #166534;    /* Verde bosque oscuro para mitigar el brillo */
+    --color-texto-bienvenida: #f8fafc;/* Letras de bienvenida blancas suaves */
+    --color-texto-subtitulo: #94a3b8; /* Subtítulo gris claro */
+    --color-cuadro-de-login: #166534;   /* Verde oscuro mate para descansar la vista */
+    --color-caja-campos: #1e293b;     /* Cuadro interno pasa a gris pizarra */
+    --color-etiqueta: #e2e8f0;        /* Texto de los labels en gris claro legible */
+    --color-input-fondo: #0f172a;     /* Cajas de texto oscuras */
+    --color-input-borde: #475569;     /* Borde grisáceo integrado */
+    --color-boton-fondo: #f8fafc;     /* Botones claros para generar alto contraste */
+    --color-boton-texto: #0f172a;     /* Letras de botones oscuras */
+}
+
+/*--------------------------------------------------------------------------------------------------------------*/
+
+
+
+
 /*--- Cuerpo general de la pantalla ---*/
 body {
-    background-color: #f1f5f9; /* color de fondo*/
+    background-color: var(--color-fondo-pantalla); /* color de fondo*/
+    transition: var(--transicion-fluida);  /*Suavizado de color*/
     margin: 0;                 /* Elimina los márgenes por defecto del navegador */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;   /* fuente de letra */
 }
@@ -14,12 +59,15 @@ body {
     margin: 0 auto;            /* Centra horizontalmente todo el bloque en la pantalla */
     border-radius: 0px;        /* Fuerza todos los bordes sean rectangulares */
     min-height: 100vh;         /* Asegura que el fondo ocupe todo el alto de la pantalla */
-    background-color: white; /* color de fondo */
+    background-color: var(--color-fondo-bloque); /* color de fondo */
+    transition: var(--transicion-fluida);  /*Suavizado de color*/
+    display: flex;             /* Permite alinear el header y el main verticalmente */
+    flex-direction: column;    /* Apila el contenido en forma de columna (uno abajo del otro) */
 }
 
 /*--- Marco superior ---*/
 #marco-superior {
-    background-color: #4fd44a; /* color de fondo*/
+    background-color: var(--color-fondo-header); /* color de fondo*/
     color: white;            /* color del texto */
     padding-top: 2.5rem;       /* Espaciado interno superior amplio para dar tamaño considerable */
     padding-bottom: 2.5rem;    /* Espaciado interno inferior amplio para mantener la simetría */
@@ -28,6 +76,7 @@ body {
     display: flex;             /* Activa el modelo de caja flexible para alinear el título */
     align-items: center;       /* Centra el título verticalmente en la parte central del marco */
     justify-content: flex-start; /* Alinea el título firmemente hacia el lado izquierdo */
+    transition: var(--transicion-fluida);  /*Suavizado de color*/
 }
 
 /*--- Título principal de la aplicación ---*/
@@ -38,4 +87,173 @@ body {
     margin: 0;                 /* Remueve márgenes automáticos*/
 }
 
+/* --- contenedor del botón de modo oscuro/claro --- */
+#contenedor-modo-oscuro {
+    display: flex;             /* ordena el logo y el texto verticalmente */
+    flex-direction: column;    /* Coloca el subtítulo abajo de la imagen */
+    align-items: center;       /* Centra los componentes horizontalmente */
+    cursor: pointer;           /* Aplica cursor de mano interactiva */
+    user-select: none;         /* Evita la selección accidental de texto al hacer clic */
+    margin-left: auto;         /* empuja por completo al final de la derecha */
+}
+
+/* --- imagen del botón de modo oscuro/claro --- */
+#icono-modo-oscuro {
+    width: 42px;               /* Ancho de la imagen */
+    height: 42px;              /* Alto de la imagen*/
+    transition: transform 0.2s ease; /* Pequeña animación física */
+}
+
+/* --- interracion del boton al pasarle el mouse --- */
+#icono-modo-oscuro:hover {
+    transform: scale(1.1);     /* Agranda el icono levemente al pasar el mouse */
+}
+
+/*--- subtitulo del boton ---*/
+#subtitulo-modo-oscuro {
+    font-size: 0.9rem;        /* Subtítulo pequeño e indicador */
+    color: white;              /* Color blanco para legibilidad en el marco superior */
+    margin-top: 0.4rem;       /* Separación controlada con el icono */
+}
+
+/* Bloque semántico de contenido centralizado */
+#main-principal {
+    padding: 2rem;             /* Margen interno para que los elementos no toquen los bordes */
+    display: flex;             /* Activa flexbox para organizar los módulos internos */
+    flex-direction: column;    /* Alinea las secciones verticalmente (títulos arriba, inicion de sesion abajo) */
+    align-items: center;       /* Centra de forma horizontal todos sus elementos hijos */
+    gap: 2rem;                 /* Espacio de separación física entre secciones */
+    flex-grow: 1;              /* Hace que este bloque se expanda si la pantalla es muy alta */
+}
 /*----------------------------------------------------------------------------------------------------------*/
+
+
+/*---------------[+] CONTENIDO PRINCIPAL DE LA PAGINA [+]---------------*/
+
+/* --- contenedor de Titulos de bienvenida --- */
+#seccion-bienvenida {
+    text-align: center;        /* Centra el texto de los dos títulos internamente */
+}
+
+/* --- titulo grande de bienvenida---*/
+.titulo-bienvenida {
+    font-size: 2.25rem;        /* Define un tamaño de letra grande e importante */
+    color: var(--color-texto-bienvenida);  /* Color gris oscuro casi negro para elegancia visual */
+    transition: var(--transicion-fluida);  /* Suavizado de color */
+    margin: 0 0 0.5rem 0;      /* Espacio inferior controlado para no separarlo del subtítulo */
+}
+
+/* --- subtítulo de bienvenida---*/
+.subtitulo-bienvenida {
+    font-size: 1.125rem;       /* Tamaño de fuente mediano y sutil */
+    color: var(--color-texto-bienvenida);    /* Tono gris apagado para crear contraste con el título */
+    transition: var(--transicion-fluida);  /* Suavizado de color */
+    margin: 0;                 /* Resetea márgenes externos automáticos */
+}
+
+/* --- Rectangulo exterior de fondo para el inicio de sesión --- */
+#cuadro-de-login {
+    background-color: var(--color-cuadro-de-login); /* Color de fondo */
+    transition: var(--transicion-fluida);  /* Suavizado de color */
+    width: 100%;               /* Se adapta al ancho disponible en dispositivos pequeños */
+    max-width: 550px;          /* Tamaño considerable para que se vea imponente en pantallas grandes */
+    padding: 2.5rem;           /* Margen interno amplio para contener los elementos cómodamente */
+    border-radius: 6px;        /* Bordes estrictamente rectangulares conforme al requerimiento */
+    box-sizing: border-box;    /* Asegura que el padding no altere el ancho máximo fijado */
+    display: flex;             /* Activa flexbox para la distribución interna del contenido */
+    flex-direction: column;    /* Organiza los elementos internos en fila vertical */
+    gap: 1.5rem;               /* Separación constante entre el título, campos y botones */
+}
+
+/* --- Título interno del inicio de sesión --- */
+.titulo-login {
+    font-size: 1.75rem;        /* Tamaño de fuente */
+    color: white;            /* color de letra*/
+    text-align: center;        /* Centra el texto horizontalmente */
+    margin: 0;                 /* Remueve márgenes residuales */
+}
+
+/* --- Rectangulo centrado gris que contiene campos de formularios --- */
+#caja-campos {
+    background-color: var(--color-caja-campos); /* Tono de fondo verde claro pastel mate */
+    transition: var(--transicion-fluida);  /* Suavizado de color */
+    padding: 2rem;             /* Espacio interno para los formularios */
+    border-radius: 6px;        /* Mantiene la consistencia de los bordes rectangulares */
+    display: flex;             /* Permite estructurar los inputs de forma ordenada */
+    flex-direction: column;    /* Coloca el campo contraseña debajo del campo usuario */
+    gap: 1.25rem;              /* Distancia perfecta de separación entre ambos campos */
+}
+
+/* --- Contenedor del label "Usuario" ---*/
+.formulario-elementos {
+    display: flex;             /* Usa flexbox para alinear la etiqueta y el input */
+    flex-direction: column;    /* Apila las palabras encima de su caja de texto */
+    gap: 0.5rem;               /* Pequeña separación estética entre etiqueta e input */
+}
+
+/* --- titulo de la etiqueta del label: "Usuario" --- */
+.etiqueta-campo {
+    font-weight: 600;          /* Aplica un grosor seminegrita para destacar el texto */
+    color: var(--color-etiqueta);  /* Gris oscuro concentrado para legibilidad */
+    transition: var(--transicion-fluida);  /* Suavizado de color */
+}
+
+/* --- input del campo de texto  "Usuario" --- */
+.campo-texto {
+    padding: 0.75rem;   /* Tamaño interno de la caja de texto para facilitar la escritura */
+    border: 1px solid var(--color-input-borde); /* Añade un borde perimetral suave */
+    border-radius: 4px;    /* Bordes rectangulares obligatorios para las cajas de entrada */
+    font-size: 1rem;     /* Tamaño de texto estándar dentro del input */
+    background-color: var(--color-input-fondo); /* Fondo blanco limpio para la escritura */
+    color: var(--color-etiqueta);  /* Texto escrito legible en ambos modos */
+    transition: var(--transicion-fluida); /* Suavizado de color */
+}
+
+/* --- Contenedor del botón principal para ingresar a la pagina - "[Ingresar]"--- */
+.contenedor-boton-ingresar {
+    display: flex;             /* Activa flexbox para controlar la ubicación del botón */
+    justify-content: center;   /* Centra horizontalmente el botón ingresar */
+    margin-top: 0.5rem;        /* Margen de holgura superior respecto a la caja de campos */
+}
+
+/*--- Botón Ingresar - "[Ingresar]" --- */
+.boton-ingresar {
+    background-color: var(--color-boton-fondo); /* Fondo oscuro idéntico al header para cohesión de diseño */
+    color: var(--color-boton-texto);            /* Letras blancas legibles */
+    transition: var(--transicion-fluida); /* Suavizado de color */
+    padding: 0.75rem 3rem;     /* Relleno vertical óptimo y ancho horizontal generoso */
+    border: none;              /* Elimina el borde de fábrica del botón */
+    border-radius: 4px;        /* Mantiene la estética rectangular estricta */
+    font-size: 1.125rem;       /* Fuente ligeramente más grande para invitar al clic */
+    font-weight: 600;          /* Texto con presencia estilizada */
+    cursor: pointer;           /* Convierte el puntero en mano al pasar por encima */
+}
+
+/*--- Contenedor inferior de botones de navegación secundaria --- */
+#contenedor-botones-secundarios {
+    display: flex;             /* Distribuye los dos enlaces en una misma línea horizontal */
+    justify-content: space-between; /* Empuja cada botón a un extremo respetando el espacio interno */
+    gap: 1rem;        /* Añade separación física obligatoria entre ambos bloques */
+    margin-top: 0.5rem;       /* Separación controlada con respecto a la caja gris superior */
+}
+
+/* Enlaces secundarios transformados visualmente en botones */
+.boton-secundario {
+    background-color: var(--color-boton-fondo); /* Cuadro de color oscuro idéntico al botón de ingresar */
+    color: var(--color-boton-texto);            /* Letras de color blanco para contraste completo */
+    transition: var(--transicion-fluida); /* Suavizado de color */
+    text-decoration: none;     /* Elimina el subrayado por defecto de los enlaces HTML */
+    font-size: 0.95rem;        /* Escala de texto ligeramente reducida y elegante */
+    font-weight: 600;          /* Le da firmeza y peso visual a las letras */
+    padding: 0.75rem 1rem;     /* Espaciado interno para dar volumen y forma de botón rectangular */
+    border-radius: 4px;        /* Aplica esquinas ligeramente suavizadas a los botones */
+    text-align: center;        /* Centra el texto en el espacio interno del botón */
+    flex-grow: 1;              /* Obliga a ambos botones a estirarse de forma simétrica y proporcional */
+    cursor: pointer;     /* Le da firmeza al texto del enlace */
+}
+
+/* --- Efecto hover para los botones secundarios --- */
+.boton-secundario:hover {
+    background-color: #1e293b; /* Aclara sutilmente el fondo al pasar el mouse como respuesta visual */
+    text-decoration: none;     /* Asegura que no aparezcan subrayados molestos durante el hover */
+}

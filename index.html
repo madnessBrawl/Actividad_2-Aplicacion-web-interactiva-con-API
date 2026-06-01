@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+
+<!-- PAGINA DE INICIO - INICIO DE SESION -->
+
 <html lang="es">
     <head>
         <meta charset="UTF-8">
@@ -6,6 +9,7 @@
         <title>Rick and Morty Posting</title>
         
         <link rel="stylesheet" href="estilos.css">
+        <script src="modo-oscuro-claro.js" defer></script>
     </head>
 
     <body> <!-- Cuerpo de la pagina -->
@@ -13,11 +17,46 @@
         <div id="contenedor"> <!-- contenedor de todo el contenido de la pagina web-->
             
             <header id="marco-superior"> <!-- marco superior-->
-                
                 <h1 class="titulo-principal">Rick and Morty Posting</h1> <!-- titulo principal -->
-                
+
+                <div id="contenedor-modo-oscuro"> <!-- boton de modo oscuro/claro -->
+                    <img src="imagenes/modo-claro-logo.png" id="icono-modo-oscuro" alt="Selector de tema gráfico">
+                    <span id="subtitulo-modo-oscuro">modo oscuro</span> <!-- subtitulo del boton -->
+                </div>
             </header>
+
             <main id="main-principal">
+                <section id="seccion-bienvenida"> <!-- titulos de bienvenida-->
+                    <h2 class="titulo-bienvenida">¡Bienvenido a tu pagina de Rick and Morty!</h2>
+                    <p class="subtitulo-bienvenida">De fans para fans</p>
+                </section>
+
+                <div id="cuadro-de-login"> <!-- Cuadro de inicio de sesión -->
+                    <h3 class="titulo-login">Iniciar sesion</h3> <!-- titulo del cuadro de inicio de sesion -->
+                    
+                    <form id="formulario-login" action="dashboard-gestion.html" method="GET"> <!-- Formulario de inicio de sesión -->
+                        <div id="caja-campos"> <!-- contenedor de campos -->
+                            <div class="formulario-elementos"> <!-- campo de usuario -->
+                                <label for="usuario" class="etiqueta-campo">Usuario:</label>
+                                <input type="text" id="usuario" name="usuario" required class="campo-texto">
+                            </div>
+                            
+                            <div class="formulario-elementos"> <!-- campo de contraseña -->
+                                <label for="contrasenia" class="etiqueta-campo">Contraseña:</label>
+                                <input type="password" id="contrasenia" name="contrasenia" required class="campo-texto">
+                            </div>
+
+                            <div class="contenedor-boton-ingresar"> <!-- contenedor del botón principal para ingresar a la pagina -->
+                                <button type="submit" class="boton-ingresar">Ingresar</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div id="contenedor-botones-secundarios"> <!-- contenedor de botones secundarios para crear cuenta y recuperar contraseña -->
+                        <a href="crearCuenta.html" class="boton-secundario">Crear cuenta</a>
+                        <a href="recuperarCuenta.html" class="boton-secundario">Recuperar contraseña</a>
+                    </div>
+                </div>
             </main>
         </div>
 
