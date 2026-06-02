@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<!-- PAGINA DE CONFIRMACIÓN - confirmar que el registro de una nueva cuenta fue exitoso -->
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registro Exitoso - Rick and Morty Posting</title>
+        <link rel="stylesheet" href="estilos-nueva-cuenta.css">
+        <link rel="stylesheet" href="estilos.css">
+        <script src="modo-oscuro-claro.js" defer></script>
+    </head>
+
+    <body>
+        <div id="contenedor"> <!-- contenedor de todo el contenido de la pagina web-->
+            <header id="marco-superior"> <!-- marco superior-->
+                <h1 class="titulo-principal">Rick and Morty Posting</h1> <!-- titulo principal -->
+                <div id="contenedor-modo-oscuro"> <!-- boton de modo oscuro/claro -->
+                    <img src="imagenes/modo-claro-logo.png" id="icono-modo-oscuro" alt="Selector de tema gráfico">
+                    <span id="subtitulo-modo-oscuro">modo oscuro</span> <!-- subtitulo del boton -->
+                </div>
+            </header>
+
+            <main id="main-principal"> <!-- contenido principal de la pagina -->
+                
+                 <!-- contenedor de mensaje de confirmacion de registro exitoso-->
+                <div class="contenedor-exito">
+                    <h2 class="titulo-bienvenida">Usuario creado con éxito</h2> <!-- titulo del mensaje -->
+                    <p class="subtitulo-bienvenida">Bienvenido a Rick and Morty Posting</p> <!-- subtitulo del mensaje -->
+
+                    <br><br>  <!-- Espacio para separar el mensaje de confirmación del botón de regreso -->
+
+                    <!-- boton de entrar de una vez al dashboard-->
+                    <div class="contenedor-boton-principal">
+                        <a href="dashboard-gestion.html" class="boton-ingresar" style="text-decoration: none; text-align: center;">Comenzar</a>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

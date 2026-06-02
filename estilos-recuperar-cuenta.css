@@ -1,0 +1,53 @@
+/*ESTILOS PARA LA PÁGINA DE RECUPERACIÓN DE CUENTA - recuperarCuenta.css*/
+
+/* Agrega herencia del diseño de formularios base */
+@import url('estilos-nueva-cuenta.css');
+
+/* Cajas contenedoras de campos */
+.caja-campos-recuperar {
+    background-color: var(--color-caja-campos); 
+    padding: 2rem; /* Acolchado interno de la caja */
+    border-radius: 6px; /* Bordes redondeados simétricos */
+    display: flex; /* Activación de flexbox para ordenar en fila o columna */
+    flex-direction: column; /* Alineación vertical de los elementos internos */
+    gap: 1.25rem; /* Separación constante entre cada grupo de entrada */
+    transition: var(--transicion-fluida); /* Animación suave para transiciones de color/tamaño */
+}
+
+/* Separación limpia entre el Input y el Botón Continuar */
+.margen-boton-recuperar {
+    margin-top: 1.8rem; /* Separación superior en el botón para evitar el desorden visual */
+}
+
+/* Telón oscuro de fondo que bloquea la pantalla al abrir el Modal */
+.modal-fondo {
+    position: fixed; /* Posicionamiento fijo para fijarlo sobre la pantalla sin importar el scroll */
+    top: 0; /* Alineación total al borde superior */
+    left: 0; /* Alineación total al borde izquierdo */
+    width: 100%; /* Ocupa el 100% del ancho de la ventana */
+    height: 100%; /* Ocupa el 100% del alto de la ventana */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo negro traslúcido con opacidad del 70% */
+    display: flex; /* Flexbox activado para maquetación interna */
+    align-items: center; /* Centrado vertical absoluto de la tarjeta interna */
+    justify-content: center; /* Centrado horizontal absoluto de la tarjeta interna */
+    z-index: 1000; /* Prioridad de superposición máxima sobre cualquier otra capa del DOM */
+}
+
+/*Tarjeta flotante centralizada del Modal */
+.modal-contenido {
+    background-color: var(--color-tarjeta-login); 
+    padding: 2.5rem; /* Espaciado interno de seguridad */
+    border-radius: 6px; /* Redondeado de esquinas idéntico al estándar general */
+    width: 100%; /* Adaptabilidad responsiva al 100% */
+    max-width: 500px; /* Ancho máximo límite para mantener la simetría visual */
+    box-sizing: border-box; /* Incluye rellenos y bordes en el cálculo de dimensiones totales */
+    display: flex; /* Flexbox para control interno */
+    flex-direction: column; /* Disposición en formato vertical */
+    gap: 1.5rem; /* Separación interna entre el título y el formulario */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra difuminada para dar efecto de profundidad en el eje Z */
+}
+
+/* Switch de visibilidad controlado por clases desde JavaScript */
+.modal-oculto {
+    display: none !important; /* Fuerza la desaparición total del elemento de la interfaz */
+}

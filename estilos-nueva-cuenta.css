@@ -1,0 +1,67 @@
+/*--------------- ESTILOs PARA LA PÁGINA DE NUEVA CUENTA ---------------*/
+/*estilos usados para: crearCuenta.html y usuarioCreado-exito.html*/
+
+
+/* Contenedor interno blanco/oscuro del formulario */
+.caja-campos-registro {
+    background-color: var(--color-caja-campos); 
+    padding: 2rem;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    transition: var(--transicion-fluida);
+}
+
+/* contendedor de los campos del formulario de registro*/
+.grupo-entrada {
+    display: flex; /* Para alinear etiqueta y campo en una columna */
+    flex-direction: column; /* Para colocar la etiqueta encima del campo */
+    gap: 0.5rem; /* Espacio entre etiqueta y campo */
+}
+
+/* Etiquetas de los campos del formulario */
+.etiqueta-campo {
+    font-weight: 600; /* Negrita para destacar las etiquetas */
+    color: var(--color-etiqueta); 
+    transition: var(--transicion-fluida); 
+}
+
+/* Campos de entrada de datos de texto y claves */
+.campo-texto {
+    padding: 0.75rem; /* Espaciado interno para comodidad al escribir */
+    border: 1px solid var(--color-input-borde); /*bordes*/
+    border-radius: 4px; /* Bordes redondeados para un aspecto moderno */
+    font-size: 1rem; /* Tamaño de fuente legible */
+    background-color: var(--color-input-fondo); 
+    color: var(--color-etiqueta);
+    transition: var(--transicion-fluida);
+}
+
+/* Mensaje de error */
+.texto-error-oculto {
+    display: none; /* Oculto por defecto */
+    color: #ef4444;
+    font-weight: 600; /* Negrita para destacar el mensaje de error */
+    text-align: center; /* Centrado para mayor visibilidad */
+    margin: 0; /* Elimina el margen predeterminado para un mejor control del espacio */
+    font-size: 0.95rem; /* Tamaño de fuente ligeramente más pequeño para el mensaje de error */
+}
+
+/* Boton abajo del formulario*/
+.contenedor-boton-principal, #contenedor-botones-secundarios {
+    display: flex; /* Para alinear los botones horizontalmente */
+    justify-content: center; /* Centra los botones horizontalmente */
+}
+
+/* Tarjeta contenedora central exclusiva de la página de éxito */
+.contenedor-exito {
+    text-align: center; /* Centrado del contenido dentro de la tarjeta */
+    padding: 3rem; /* Espaciado interno para comodidad visual */
+    background-color: var(--color-caja-campos);
+    border-radius: 6px; /* Bordes redondeados para un aspecto moderno */
+    width: 100%; /* usando el 100% del ancho */
+    max-width: 550px; /*maxima anchura a alcanzar */
+    box-sizing: border-box; /* Asegura que el padding no aumente el ancho total de la tarjeta */
+    transition: var(--transicion-fluida); 
+}

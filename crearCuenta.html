@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<!-- PAGINA DE INICIO - Pagina de crear nueva cuenta -->
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Crear Cuenta - Rick and Morty Posting</title>
+        
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="stylesheet" href="estilos-nueva-cuenta.css">
+        <script src="modo-oscuro-claro.js" defer></script>
+        <script src="script.js" defer></script>
+    </head>
+
+    <body> <!-- Cuerpo de la pagina -->
+
+        <div id="contenedor"> <!-- contenedor de todo el contenido de la pagina web-->
+            
+            <header id="marco-superior"> <!-- marco superior-->
+                <h1 class="titulo-principal">Rick and Morty Posting</h1> <!-- titulo principal -->
+
+                <div id="contenedor-modo-oscuro"> <!-- boton de modo oscuro/claro -->
+                    <img src="imagenes/modo-claro-logo.png" id="icono-modo-oscuro" alt="Selector de tema gráfico">
+                    <span id="subtitulo-modo-oscuro">modo oscuro</span> <!-- subtitulo del boton -->
+                </div>
+            </header>
+
+            <main id="main-principal">
+                <div id="cuadro-de-login">
+
+                    <h3 class="titulo-login">Crear cuenta nueva</h3>
+                    
+                    <form id="formulario-registro" class="caja-campos-registro">
+                        <div class="grupo-entrada">
+                            <label class="etiqueta-campo">Nombre completo:</label>
+                            <input type="text" id="reg-nombre" class="campo-texto" placeholder="Ej. Rick Sanchez" required>
+                        </div>
+
+                        <div class="grupo-entrada">
+                            <label class="etiqueta-campo">Cédula:</label>
+                            <input type="text" id="reg-cedula" class="campo-texto" placeholder="Ej. 12345678" required>
+                        </div>
+
+                        <div class="grupo-entrada">
+                            <label class="etiqueta-campo">Teléfono:</label>
+                            <input type="tel" id="reg-telefono" class="campo-texto" placeholder="Ej. 04141234567" required>
+                        </div>
+
+                        <div class="grupo-entrada">
+                            <label class="etiqueta-campo">Correo electrónico:</label>
+                            <input type="email" id="reg-email" class="campo-texto" placeholder="nombre@correo.com" required>
+                        </div>
+
+                        <div class="grupo-entrada">
+                            <label class="etiqueta-campo">Contraseña (Mínimo 6 dígitos):</label>
+                            <input type="password" id="reg-password" class="campo-texto" minlength="6" placeholder="******" required>
+                        </div>
+
+                        <div class="grupo-entrada">
+                            <label class="etiqueta-campo">Confirmar contraseña:</label>
+                            <input type="password" id="reg-confirm-password" class="campo-texto" minlength="6" placeholder="******" required>
+                        </div>
+
+                        <p id="mensaje-error-registro" class="texto-error-oculto"></p>
+
+                        <div class="contenedor-boton-principal">
+                            <button type="submit" class="boton-ingresar">Terminar registro</button>
+                        </div>
+                    </form>
+
+                    <div id="contenedor-botones-secundarios">
+                        <a href="index.html" class="boton-secundario">Cerrar</a>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+    </body>
+</html>

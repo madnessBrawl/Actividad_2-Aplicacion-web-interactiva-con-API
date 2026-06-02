@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<!-- PAGINA DE CAMBIO DE CONTRASEÑA - Pagina para cambiar la contraseña existente -->
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cambiar Contraseña - Rick and Morty Posting</title>
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="stylesheet" href="estilos-nueva-cuenta.css">
+        <script src="modo-oscuro-claro.js" defer></script>
+        <script src="script.js" defer></script>
+    </head>
+
+    <body>  <!-- Cuerpo de la pagina -->
+        <div id="contenedor">
+            <header id="marco-superior">
+                <h1 class="titulo-principal">Rick and Morty Posting</h1>
+                <div id="contenedor-modo-oscuro">
+                    <img src="imagenes/modo-claro-logo.png" id="icono-modo-oscuro" alt="Selector de tema">
+                    <span id="subtitulo-modo-oscuro">modo oscuro</span>
+                </div>
+            </header>
+
+            <main id="main-principal"> <!-- Contenido principal de la pagina -->
+                <div id="cuadro-de-login"> <!-- cuadro reusado del "inicio de sesion" para el cambio de clave-->
+                    <h3 class="titulo-login">Nueva Contraseña</h3> <!-- titulo del formulario  -->
+                    
+                    <!-- formulario de cambio de contraseña -->
+                    <form id="form-ejecutar-cambio" class="caja-campos-registro">
+
+                        <div class="grupo-entrada"> <!-- campo de la nueva clave -->
+                            <label class="etiqueta-campo">Nueva Contraseña (Mín. 6 dígitos):</label>
+                            <input type="password" id="cambio-nueva-pass" class="campo-texto" minlength="6" required>
+                        </div>
+
+                        <div class="grupo-entrada"> <!-- campo de confirmación de la nueva clave -->
+                            <label class="etiqueta-campo">Confirmar nueva contraseña:</label>
+                            <input type="password" id="cambio-confirm-pass" class="campo-texto" minlength="6" required>
+                        </div>
+                        
+                        <!-- mensaje de error ante clave invalidad por el sistema-->
+                        <p id="error-cambio-pass" class="texto-error-oculto"></p>
+                        
+                        <!-- boton de confirmacion para cmabiar la clave-->
+                        <div class="contenedor-boton-principal">
+                            <button type="submit" class="boton-ingresar">Cambiar contraseña</button>
+                        </div>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

@@ -1,8 +1,7 @@
-/*--------------- ESTILO BASE DEL PROYECTO ---------------*/
+/*--------------- ESTILOs BASE DEL PROYECTO ---------------*/
 
-/*
-////////////////////// Variables(CUSTOM PROPERTIES)//////////////////////
-*/
+
+/* ////////////////////// Variables(CUSTOM PROPERTIES)////////////////////// */
 
 :root {
     /* Paleta por defecto - Modo Claro */
@@ -182,6 +181,24 @@ body {
     display: flex;             /* Permite estructurar los inputs de forma ordenada */
     flex-direction: column;    /* Coloca el campo contraseña debajo del campo usuario */
     gap: 1.25rem;              /* Distancia perfecta de separación entre ambos campos */
+}
+
+/* mensaje de error ocultos que se activan por el javascript */
+.texto-error-oculto {
+    display: none; /* Oculto por defecto, se muestra solo al activar la clase desde JS */
+    color: #ff4d4d; 
+    font-size: 0.9rem;  /* Tamaño de fuente para el mensaje de error */
+    margin: 0.5rem 0;   /* Margen vertical para separar el mensaje del resto del contenido */
+    text-align: center; /* Centra el texto del mensaje de error */
+}
+
+/* Espacio y formato para el error dentro del cuadro de login */
+#mensaje-error-login {
+    font-size: 0.9rem; /* Tamaño de fuente para el mensaje de error */
+    margin-top: 10px; /* Margen vertical para separar el mensaje del resto del contenido */
+    margin-bottom: 5px; /* Margen vertical para separar el mensaje del resto del contenido */
+    text-align: center; /* Centra el texto del mensaje de error */
+    font-weight: bold; /* Hace que el mensaje de error tenga más presencia visual */
 }
 
 /* --- Contenedor del label "Usuario" ---*/

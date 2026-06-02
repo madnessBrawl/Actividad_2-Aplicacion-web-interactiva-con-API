@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<!-- PAGINA DE configuracion de seguridad - PREGUNTAS DE SEGURIDAD -->
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Preguntas de Seguridad - Rick and Morty Posting</title>
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="stylesheet" href="estilos-preguntas-seguridad.css">
+        <script src="modo-oscuro-claro.js" defer></script>
+        <script src="script.js" defer></script>
+    </head>
+    
+    <body>
+        <div id="contenedor"> <!-- contenedor de todo el contenido de la pagina web-->
+            <header id="marco-superior"><!-- marco superior-->
+                <h1 class="titulo-principal">Rick and Morty Posting</h1> <!-- titulo principal -->
+                <div id="contenedor-modo-oscuro"> <!-- boton de modo oscuro/claro -->
+                    <img src="imagenes/modo-claro-logo.png" id="icono-modo-oscuro" alt="Selector de tema">
+                    <span id="subtitulo-modo-oscuro">modo oscuro</span> <!-- subtitulo del boton -->x
+                </div>
+            </header>
+
+            <main id="main-principal">
+                <div id="cuadro-de-login"> <!-- cuadro de configuracion de preguntas de seguridad-->
+                    <h3 class="titulo-login">Preguntas de Seguridad</h3> <!-- titulo-->
+                    
+                    <!-- Formulario de preguntas de seguridad -->
+                    <form id="formulario-preguntas" class="caja-campos-seguridad">
+                        
+                        <div class="grupo-entrada"> <!-- campo de preguntas 1 -->
+                            <label class="etiqueta-campo">Pregunta 1:</label>
+                            <select id="p1-seleccion" class="campo-texto" required> <!-- 3 preguntas a eleccion del nuevo usuario-->
+                                <option value="" disabled selected>Seleccione una pregunta...</option> <!-- titulo por defecto de las opciones-->
+                                <option value="¿Ciudad de nacimiento?">¿Ciudad de nacimiento?</option>
+                                <option value="¿Primer nombre de tu madre?">¿Primer nombre de tu madre?</option>
+                                <option value="¿Color favorito?">¿Color favorito?</option>
+                            </select>
+                            <!-- campo de respuestas -->
+                            <input type="text" id="p1-respuesta" class="campo-texto" placeholder="Tu respuesta..." required>
+                        </div>
+
+                        <div class="grupo-entrada"> <!-- campo de preguntas 2 -->
+                            <label class="etiqueta-campo">Pregunta 2:</label>
+                            <select id="p2-seleccion" class="campo-texto" required> <!-- 3 preguntas a eleccion del nuevo usuario-->
+                                <option value="" disabled selected>Seleccione una pregunta...</option> <!-- titulo por defecto de las opciones-->
+                                <option value="¿Ciudad o pais favorito?">¿Ciudad o pais favorito?</option>
+                                <option value="¿Artista musical favorito?">¿Artista musical favorito?</option>
+                                <option value="¿Nombre de su mascota?">¿Nombre de su mascota?</option>
+                            </select>
+                            <!-- campo de respuestas -->
+                            <input type="text" id="p2-respuesta" class="campo-texto" placeholder="Tu respuesta..." required>
+                        </div>
+
+                        <div class="grupo-entrada"> <!-- campo de preguntas 3 -->
+                            <label class="etiqueta-campo">Pregunta 3:</label>
+                            <select id="p3-seleccion" class="campo-texto" required> <!-- 3 preguntas a eleccion del nuevo usuario-->
+                                <option value="" disabled selected>Seleccione una pregunta...</option> <!-- titulo por defecto de las opciones-->
+                                <option value="¿Comida favorita?">¿Comida favorita?</option>
+                                <option value="¿Serie de TV favorita?">¿Serie de TV favorita?</option>
+                                <option value="¿Animal menos favorito?">¿Animal menos favorito?</option>
+                            </select>
+                            <!-- campo de respuestas -->
+                            <input type="text" id="p3-respuesta" class="campo-texto" placeholder="Tu respuesta..." required>
+                        </div>
+                        
+                        <!-- mensaje de error ante errores en el formulario -->
+                        <p id="mensaje-error-preguntas" class="texto-error-oculto"></p>
+                        
+                        <!-- boton de finalizacion de configuracion-->
+                        <div class="contenedor-boton-principal">
+                            <button type="submit" class="boton-ingresar">Finalizar registro</button>
+                        </div>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

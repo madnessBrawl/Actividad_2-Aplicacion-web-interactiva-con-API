@@ -1,0 +1,28 @@
+/*--------------- ESTILOs PARA lAS PREGUNTAS DE SEGURIDAD ---------------*/
+/*estilos usados para: recuperarCuenta.html y preguntasSeguridad.html*/
+
+/* Importa las propiedades del formulario de cuentas para no repetir código */
+@import url('estilos-nueva-cuenta.css');
+
+/* Contenedor centralizado para las preguntas de seguridad */
+.caja-campos-seguridad {
+    background-color: var(--color-caja-campos);
+    padding: 2rem; /* Espaciado interno para separar el contenido de los bordes */
+    border-radius: 6px; /* Bordes redondeados para un aspecto más suave */
+    display: flex; /* Usamos flexbox para organizar los campos de manera vertical */
+    flex-direction: column; /* Organiza los campos en una columna */
+    gap: 1.5rem; /* Espacio entre cada grupo de entrada */
+    transition: var(--transicion-fluida);
+}
+
+/* Adaptación del puntero para los elementos select - campos de preguntas de seguridad */
+/* se declara el select aqui para que se aplique únicamente a las etiquetas <select> (listas desplegables)*/
+select.campo-texto {
+    cursor: pointer; /*Cambia el icono del cursor del ratón por una manita con el dedo índice levantado*/
+}
+
+/* Opciones internas del selector adaptables al modo activo - preguntas a escoger por el usuario */
+select.campo-texto option {
+    background-color: var(--color-input-fondo);
+    color: var(--color-etiqueta);
+}
