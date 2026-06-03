@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // EVALUACIÓN DE SEGURIDAD ESTRICTA
             if (usuarioValidado && usuarioValidado.password === passwordInput) {
                 msgErrorLogin.style.display = 'none'; // Esconde errores previos
-                window.location.href = 'dashboard-gestion.html'; // REDIRECCIÓN MANUAL APROBADA
+                window.location.href = 'dashboard-gestion-personaje.html'; // REDIRECCIÓN MANUAL APROBADA
             } else {
                 // Si los datos no coinciden, se bloquea el acceso y muestra la alerta
                 mostrarError(msgErrorLogin, "Usuario o contraseña incorrectos.");

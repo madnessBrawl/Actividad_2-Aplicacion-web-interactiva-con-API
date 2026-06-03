@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 
-<!-- DASHBOARD DE GESTIÓN - gestion de episodos y personajes -->
+<!-- DASHBOARD DE GESTIÓN - gestion de episodos -->
 
 <html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Rick and Morty Posting</title>
-        
+        <script src="modo-oscuro-claro.js" defer></script>
+        <script src="api.js" defer></script>
         <link rel="stylesheet" href="estilos.css">
+        <link rel="stylesheet" href="estilos-dashboard-episodios.css">
     </head>
 
     <body> <!-- Cuerpo de la pagina -->
@@ -16,10 +18,13 @@
         <div id="contenedor"> <!-- contenedor de todo el contenido de la pagina web-->
             
             <header id="marco-superior"> <!-- marco superior-->
-                
                 <h1 class="titulo-principal">Rick and Morty Posting</h1> <!-- titulo principal -->
-                
+                <div id="contenedor-modo-oscuro"> <!-- boton de modo oscuro/claro -->
+                    <img src="imagenes/modo-claro-logo.png" id="icono-modo-oscuro" alt="Selector de tema gráfico">
+                    <span id="subtitulo-modo-oscuro">modo oscuro</span> <!-- subtitulo del boton -->
+                </div>
             </header>
+            
             <main id="main-principal">
             </main>
         </div>

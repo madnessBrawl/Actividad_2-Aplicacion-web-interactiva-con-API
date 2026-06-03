@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<!-- DASHBOARD DE GESTIÓN - gestion de personajes -->
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rick and Morty Posting</title>
+        <script src="modo-oscuro-claro.js" defer></script>
+        <script src="api.js" defer></script>
+        <script src="script.js" defer></script>
+        
+        <link rel="stylesheet" href="estilos.css">
+        <link rel="stylesheet" href="estilos-dashboard-personajes.css">
+    </head>
+
+    <body> <!-- Cuerpo de la pagina -->
+
+        <div id="contenedor"> <!-- contenedor de todo el contenido de la pagina web-->
+            
+            <header id="marco-superior"> <!-- marco superior-->
+                <h1 class="titulo-principal">Rick and Morty Posting</h1> <!-- titulo principal -->
+                
+                <!-- contenedor de los botones de navegación -->
+                <div id="bloque-controles-navegacion">
+
+                    <!-- boton de pagina de gestion de episodios-->
+                    <div id="btn-navegar-episodios" class="control-header-item">
+                        <a href="dashboard-gestion-episodio.html" class="enlace-nodo">
+                            <img src="imagenes/cambio-episodios-logo.png" class="icono-control-nav" alt="Ir a Episodios">
+                            <span class="subtitulo-control-nav">Episodios</span>
+                        </a>
+                    </div>
+                    
+                    <!-- boton de salir a la pagina de inicio-->
+                    <div id="btn-cerrar-sesion" class="control-header-item">
+                        <a href="index.html" class="enlace-nodo">
+                            <img src="imagenes/salir-de-pagina-logo.png" class="icono-control-nav" alt="Salir del sistema">
+                            <span class="subtitulo-control-nav">Salir</span>
+                        </a>
+                    </div>
+
+                    <div id="contenedor-modo-oscuro"> <!-- boton de modo oscuro/claro -->
+                        <img src="imagenes/modo-claro-logo.png" id="icono-modo-oscuro" alt="Selector de tema gráfico">
+                        <span id="subtitulo-modo-oscuro">modo oscuro</span> <!-- subtitulo del boton -->
+                    </div>
+                </div>
+            </header>
+            
+            <main id="main-principal"> <!-- Contenido principal -->
+
+                <!-- contenedor de titulos principales de la pagina -->
+                <section id="seccion-bienvenida-dashboard" style="text-align: center; width: 100%; display: flex; flex-direction: column; align-items: center;">
+                    <h2 id="titulo-bienvenida-usuario" class="titulo-bienvenida">¡Bienvenido!</h2> <!-- Titulo principal de la pagina -->
+                    <p class="subtitulo-bienvenida">Gestión de datos de la serie (Haz clic en una fila para ver su ficha)</p> <!-- subtitulo de indicacion-->
+                </section>
+                
+                <section id="seccion-buscador-realtime"> <!-- titulo de tabla de busqueda de personaje -->
+                    <label for="buscador" class="subtitulo-busqueda">Busca al personaje que desees</label>
+                    <input type="text" id="buscador" placeholder="Escribe el nombre de un personaje..." class="campo-texto-largo">
+                </section>
+                
+                <!-- Tabla de datos de personajes -->
+                 <!-- section se usa para agrupar elementos de la tabla -->
+                <section id="seccion-tabla-datos">
+                    
+                    <div id="barra-utilidades-tabla"> <!-- Barra de utilidades de la tabla -->
+                        <h4 id="subtitulo-lista-datos">Lista de personajes</h4> <!-- subtitulo de la tabla -->
+                        <button id="btn-ordenar-tabla" class="boton-ordenar-ovalado">Ascendente a Descendente</button> <!-- boton de ordenamiento -->
+                    </div>
+                    
+                    <!--- contenedor de la tabla responsiva -->
+                    <div class="contenedor-tabla-responsiva">
+                        <table id="tabla-personajes"> <!-- tabla de personajes -->
+                            <thead>
+                                <tr> <!-- columna de elementos de la tabla o cabeza de tabla-->
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Especie</th>
+                                    <th>Género</th>
+                                    <th>Tipo</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody-personajes"> <!-- cuerpo de la tabla donde se insertan los datos dinámicamente con JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <!-- modal de ficha de personaje o ventanas apagadas para la ficha de personaje-->
+        <div id="modal-ficha-personaje" class="modal-fondo modal-oculto">
+        
+            <div class="modal-contenido-ficha"> <!-- tarjeta interna estructurada verticalmente según el boceto de la ficha -->
+                <h3 class="titulo-ficha-centrado">Ficha de personaje</h3> <!-- titulo de la ficha-->
+                
+                <!-- imagen del personaje-->
+                <img id="ficha-img" src="" class="img-ficha-avatar" alt="Fotografía del personaje"> 
+                
+                <div class="contenedor-botones-ficha"> <!-- contenedor de botones de control de la ficha -->
+                    <button id="btn-modificar-ficha" class="btn-control-ficha">Modificar</button>
+                    <button id="btn-ficha-guardar" class="btn-control-ficha">Guardar</button>
+                    <button id="btn-ficha-salir" class="btn-control-ficha">Salir</button>
+                </div>
+                
+                <!-- mensajes de error ante errores de validación -->
+                <p id="mensaje-alerta-ficha" class="texto-error-oculto"></p>
+                
+                <!-- contenedor de los campos de la ficha-->
+                <div class="contenedor-campos-ficha">
+                    
+                    <!-- filas de campos de la ficha -->
+
+                    <div class="fila-campo-ficha">  <!-- fila del nombre -->
+                        <label class="etiqueta-campo-ficha">Nombre:</label>
+                        <input type="text" id="ficha-nombre" class="rectangulo-campo-ficha" disabled>
+                    </div>
+                    
+                    <div class="fila-campo-ficha"> <!-- fila del estado -->
+                        <label class="etiqueta-campo-ficha">Estado:</label>
+                        <input type="text" id="ficha-estado" class="rectangulo-campo-ficha" disabled>
+                    </div>
+                    
+                    <div class="fila-campo-ficha"> <!-- fila del tipo -->
+                        <label class="etiqueta-campo-ficha">Tipo:</label>
+                        <input type="text" id="ficha-tipo" class="rectangulo-campo-ficha" disabled>
+                    </div>
+                    
+                    <div class="fila-campo-ficha"> <!-- fila de la genero -->
+                        <label class="etiqueta-campo-ficha">Género:</label>
+                        <input type="text" id="ficha-genero" class="rectangulo-campo-ficha" disabled>
+                    </div>
+                    
+                    <div class="fila-campo-ficha"> <!-- fila de la localización -->
+                        <label class="etiqueta-campo-ficha">Localización:</label>
+                        <input type="text" id="ficha-localizacion" class="rectangulo-campo-ficha" disabled>
+                    </div>
+                    
+                    <div class="fila-campo-ficha"> <!-- fila del origen -->
+                        <label class="etiqueta-campo-ficha">Origen:</label>
+                        <input type="text" id="ficha-origen" class="rectangulo-campo-ficha" disabled>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
