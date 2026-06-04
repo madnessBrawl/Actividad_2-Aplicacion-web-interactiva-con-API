@@ -1,11 +1,11 @@
-// LOGICA DE LA API Y EL ARCHIVO dashboard-gestion-episodio.html y dashboard-gestion-personaje.html
+// LOGICA DE LA API Y EL ARCHIVO dashboard-gestion-personaje.html
 
 /* ==========================================================================
    CONTROLADOR INTERACTIVO DE DATOS (API, FICHA MODAL AISLADA POR CUENTA)
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // === 1. DECLARACIÓN DE VARIABLES Y SELECTORES DEL DOM (IDs SINCRONIZADOS) ===
+    // === 1. DECLARACIÓN DE VARIABLES Y SELECTORES DEL DOM  ===
     let listadoPersonajes = [];      
     let ordenAscendente = true;      
     let personajeSeleccionado = null; 
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnCerrarModal = document.getElementById('btn-ficha-salir');
     const txtMensajeFicha = document.getElementById('mensaje-alerta-ficha');
 
-    // === 2. DATOS SIMULADOS DE RESPALDO (REQUISITO OFFLINE MANDATORIO) ===
+    // === 2. DATOS SIMULADOS DE RESPALDO  ===
     const datosSimuladosOffline = [
         { id: 1, name: "Rick Sanchez (Offline)", status: "Alive", species: "Human", type: "", gender: "Male", origin: { name: "Earth" }, location: { name: "Earth" }, image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg" },
         { id: 2, name: "Morty Smith (Offline)", status: "Alive", species: "Human", type: "", gender: "Male", origin: { name: "Earth" }, location: { name: "Earth" }, image: "https://rickandmortyapi.com/api/character/avatar/2.jpeg" },
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderizarTabla(listadoPersonajes);
     }
 
-    // === 5. MAQUETACIÓN DINÁMICA DE FILAS (SINCRONIZADO CON TUS HEADERS) ===
+    // === 5. MAQUETACIÓN DINÁMICA DE FILAS (SINCRONIZADO CON HEADERS) ===
     function renderizarTabla(datos) {
         if (!tablaCuerpo) return;
         tablaCuerpo.innerHTML = ''; 

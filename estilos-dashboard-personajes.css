@@ -167,21 +167,21 @@ body.dark-mode #tabla-personajes tbody tr:nth-child(odd) {
 
 /* Fondo oscurecido general que bloquea la interacción externa */
 .modal-fondo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.75);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: fixed; /* Posicionamiento fijo en la pantalla */
+    top: 0; /* Alineación superior */
+    left: 0; /* Alineación izquierda */
+    width: 100%; /* Ancho total */
+    height: 100%; /* Altura total */
+    background-color: rgba(0, 0, 0, 0.75); /* Fondo oscuro con transparencia */
+    display: flex; /* Distribución flexbox */
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
     z-index: 2000; /* Superposición superior garantizada */
 }
 
 /* Clase técnica utilitaria controlada desde JS para ocultar/mostrar elementos */
 .modal-oculto {
-    display: none !important;
+    display: none !important; /* Oculta el modal cuando la clase está presente */
 }
 
 /* Tarjeta interna estructurada verticalmente según el boceto de la ficha */
@@ -198,21 +198,21 @@ body.dark-mode #tabla-personajes tbody tr:nth-child(odd) {
     flex-direction: column;        /* Alineación en formato vertical */
     align-items: center;           /* Centrado horizontal de la foto y campos */
     gap: 0.6rem;                  /* Espaciado corto entre elementos */
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6); 
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);  /* Sombra intensa para destacar la ficha sobre el fondo oscuro */
 }
 
 /* Título de la Ficha centrado */
 .titulo-ficha-centrado {
-    font-size: 1.5rem;
-    margin: 0;
-    text-align: center;
+    font-size: 1.5rem; /* Tamaño de fuente destacado para el título de la ficha */
+    margin: 0;  /* Elimina márgenes por defecto para un control total del espaciado */
+    text-align: center; /* Centrado horizontal del texto */
     color: var(--color-texto-bienvenida);
 }
 
 /* Fotografía del personaje proporcionada por la API (Tamaño considerable) */
 .img-ficha-avatar {
-    width: 120px;
-    height: 120px;
+    width: 120px; /*anchura*/
+    height: 120px; /* altura */
     border-radius: 8px; /* Bordes redondeados simétricos */
     object-fit: cover; /* Evita la distorsión o aplastamiento de la imagen */
     border: 3px solid #166534; /* Marco perimetral representativo */
@@ -220,53 +220,54 @@ body.dark-mode #tabla-personajes tbody tr:nth-child(odd) {
 
 /* Bloque contenedor horizontal para los 3 botones de control */
 .contenedor-botones-ficha {
-    display: flex;
+    display: flex; /* Flexbox horizontal para organizar los botones en una fila */
     flex-direction: row; /* Posiciona los botones uno al lado del otro */
-    justify-content: center;
+    justify-content: center; /* Centra el grupo de botones dentro del contenedor */
     gap: 0.75rem; /* Separación simétrica uniforme */
-    width: 100%;
+    width: 100%; /*usa el 100% del espacio de la anchura*/
 }
 
 /* Botones rectangulares con bordes redondos conformados según requerimiento */
 .btn-control-ficha {
     flex: 1; /* Distribuye el tamaño equitativamente entre los 3 botones */
-    padding: 0.6rem 0.5rem;
+    padding: 0.6rem 0.5rem; /* Relleno interno para mejorar la interacción táctil */
     background-color: var(--color-boton-fondo);
     color: var(--color-boton-texto);
-    border: 1px solid var(--color-input-borde);
+    border: 1px solid var(--color-input-borde); /*bordes*/
     border-radius: 6px; /* Bordes redondeados intermedios */
-    font-size: 0.85rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: opacity 0.2s ease;
+    font-size: 0.85rem; /* Tamaño de letra compacto para botones secundarios */
+    font-weight: bold; /* Estilo de letra en negrita para destacar la función de los botones */
+    cursor: pointer; /* Habilita el cursor interactivo */
+    transition: opacity 0.2s ease; /* Transición suave para el efecto de hover */
 }
 
+/* Efecto visual de retroalimentación al interactuar con los botones de control */
 .btn-control-ficha:hover {
-    opacity: 0.9;
+    opacity: 0.9; /* Ligera disminución de opacidad para indicar interactividad */
 }
 
 /* Contenedor vertical de los campos informativos */
 .contenedor-campos-ficha {
-    width: 100%;
-    display: flex;
+    width: 100%; /* Expande al máximo el ancho disponible dentro de la tarjeta */
+    display: flex; /* Flexbox vertical para organizar los campos de información */
     flex-direction: column; /* Organiza los bloques uno abajo del otro */
-    gap: 0.85rem;
+    gap: 0.85rem; /* Espacio de separación entre cada fila de campo para evitar amontonar los elementos */
 }
 
 /* Fila individual que contiene la etiqueta y su respectivo campo */
 .fila-campo-ficha {
-    display: flex;
-    flex-direction: row;
+    display: flex; /* Flexbox horizontal para alinear etiqueta y campo en la misma línea */
+    flex-direction: row; /* Alineación horizontal de los elementos */
     justify-content: space-between;/* Envía la etiqueta a la izquierda y el input a la derecha */
-    width: 100%;
-    gap: 0.5rem;
+    width: 100%; /*usa el 100% del espacio de la anchura*/
+    gap: 0.5rem; /* Espacio de separación entre la etiqueta y el campo para evitar amontonar los elementos */
 }
 
 .etiqueta-campo-ficha {
     font-size: 0.85rem; /* Tamaño de letra sutil */
     font-weight: 600;   /* Grosor de fuente semi-negrita */
     color: white !important; /* Color blanco puro para máxima legibilidad */    
-    width: 28%;
+    width: 28%; /*usa el 28% del espacio de la anchura*/
     text-align: left; /* Alineación estricta a la izquierda para las etiquetas */
 }
 
@@ -278,20 +279,20 @@ body.dark-mode #tabla-personajes tbody tr:nth-child(odd) {
 
 /* Rectángulo horizontal y delgado que sirve para mostrar y modificar los datos */
 .rectangulo-campo-ficha {
-    width: 72%;
-    padding: 0.4rem 0.6rem;
-    font-size: 0.9rem;
+    width: 72%; /*usa el 72% del espacio de la anchura*/
+    padding: 0.4rem 0.6rem; /* Relleno interno para mejorar la legibilidad y la interacción */
+    font-size: 0.9rem; /* Tamaño de letra legible pero compacto */
     background-color: var(--color-input-fondo);
     color: var(--color-etiqueta);
     border: 1px solid var(--color-input-borde);
-    border-radius: 4px;
-    box-sizing: border-box;
-    transition: border-color 0.2s ease;
+    border-radius: 4px; /* Bordes ligeramente redondeados para un aspecto moderno */
+    box-sizing: border-box; /* Asegura que el padding no afecte al ancho total del elemento */
+    transition: border-color 0.2s ease; /* Transición suave para el cambio de color del borde al habilitar la edición */
 }
 
 /* Estilo dinámico adaptado cuando un campo es habilitado para su modificación */
 .rectangulo-campo-ficha:not(:disabled) {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: white;
+    color: black;
     border-color: #166534; /* Contorno verde indicativo de edición activa */
 }

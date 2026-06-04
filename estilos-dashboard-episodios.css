@@ -1,2 +1,268 @@
 /*ESTILOS PARA EL DASHBOARD CENTRAL DE LA PAGINA - dashboard-gestion-episodio.html */
 
+/* --- ENCABEZADO Y CONTROLES NAV --- */
+
+/* contenedor de botones de navegacion */
+#bloque-controles-navegacion {
+    display: flex; /* Alineación horizontal de botones */
+    align-items: center; /* Centrado vertical de los controles */
+    gap: 1.5rem; /* Separación entre ítems */
+    margin-left: auto; /* Empuja los controles a la derecha */
+}
+
+/* contenedor de cada boton de navegacion (icono + texto) */
+.control-header-item {
+    display: flex; /* Organización vertical de icono y texto */
+    flex-direction: column; /* Alineación vertical de icono y texto */
+    align-items: center; /* Centrado horizontal de icono y texto */
+    cursor: pointer; /* Cursor de mano para indicar interactividad */
+}
+
+/* <a> de redirigir a otra página */
+.enlace-nodo {
+    text-decoration: none; /* Elimina el subrayado de enlaces */
+    color: inherit; /* Hereda el color del texto para mantener consistencia */
+    display: flex; /* Organización vertical de icono y texto */
+    flex-direction: column; /* Alineación vertical de icono y texto */
+    align-items: center; /* Centrado horizontal de icono y texto */
+}
+
+/* imgen de los botones */
+.icono-control-nav {
+    width: 42px; /* anchura de la imagen */
+    height: 42px;  /* altura de  la imagen */   
+    transition: transform 0.2s ease; /* Transición suave para el efecto de hover */
+}
+
+/* clase de contenedor de cada boton - interaccion al pasar el mouse  */
+.control-header-item:hover .icono-control-nav {
+    transform: scale(1.1); /* Efecto de agrandado al pasar el mouse */
+}
+
+/*subtitulo del boton */
+.subtitulo-control-nav {
+    font-size: 0.9rem; /* tamaño de fuente del subtitulo */
+    color: white;
+    margin-top: 0.4rem; /* espacio entre el icono y el subtitulo */
+}
+
+/* -------------- BUSCADOR Y UTILIDADES -------------------------------------- */
+
+/* section de titulos de bienvenida al usuario */
+#seccion-buscador-realtime {
+    width: 100%; /*usa el 100% de la anchura*/
+    max-width: 800px; /*maxima altura*/
+    display: flex; /* Organización vertical */
+    flex-direction: column; /* Alineación vertical */
+    gap: 0.5rem; /* Espacio entre el subtítulo y el campo de texto */
+}
+
+/*subtitulo de la barra de busqueda - label */
+.subtitulo-busqueda {
+    font-size: 1.15rem; /* tamaño de fuente del subtitulo */
+    font-weight: 600;  /* negrita para destacar el subtitulo */
+    color: var(--color-texto-bienvenida);
+}
+
+/*barra de busqueda - input*/
+.campo-texto-largo {
+    width: 100%; /*usa el 100% de la anchura*/
+    padding: 0.85rem 1.25rem; /* Relleno interno para mayor comodidad */
+    font-size: 1.05rem; /* tamaño de fuente del texto ingresado */
+    background-color: var(--color-input-fondo);
+    color: var(--color-etiqueta);
+    border: 2px solid var(--color-input-borde); /*bordes de la barra de busqueda*/
+    border-radius: 50px; /* Diseño en forma de cápsula */
+    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho total */
+}
+
+/*elementos afuera de la tabla - subtitulo y boton*/
+#barra-utilidades-tabla {
+    width: 100%; /*usa el 100% de la anchura*/
+    display: flex; /* Separa título y botón de orden */
+    justify-content: space-between; /* Título a la izquierda, botón a la derecha */
+    align-items: center; /* Centrado vertical */
+    margin-bottom: 0.75rem; /* Espacio debajo de la barra de utilidades */
+}
+
+/*subtitulo fuera de la tabla*/
+#subtitulo-lista-datos {
+    font-size: 1.2rem; /* tamaño de fuente del subtitulo */
+    margin: 0; /*quita el margen por defecto*/
+    color: var(--color-texto-bienvenida);
+}
+
+/*boton de Ascendente a Descendente*/
+.boton-ordenar-ovalado {
+    background-color: var(--color-boton-fondo);
+    color: var(--color-boton-texto);
+    border: 1px solid var(--color-input-borde); /*bordes*/
+    padding: 0.5rem 1.5rem; /* Relleno interno para mayor comodidad */
+    border-radius: 50px; /* Diseño en forma de cápsula */
+    font-size: 0.9rem; /* tamaño de fuente del texto del botón */
+    font-weight: 600; /* negrita para destacar el texto del botón */
+    cursor: pointer; /* Cursor de mano para indicar interactividad */
+}
+
+
+/* --------------------------- ESTRUCTURA DE LA TABLA ---------------------------- */
+
+/*contenedor de la tabla responsiva*/
+.contenedor-tabla-responsiva {
+    width: 100%; /*usa el 100% de la anchura*/
+    overflow-x: auto; /* Barra de desplazamiento horizontal en móviles */
+    border-radius: 6px; /* Bordes redondeados para un diseño más suave */
+}
+
+/* tabla de episdios */
+#tabla-episodios {
+    width: 100%; /*usa el 100% de la anchura*/
+    border-collapse: collapse; /* Une bordes de celdas */
+    text-align: left; /* Alineación de texto a la izquierda para mejor legibilidad */
+    font-size: 0.95rem; /* tamaño de fuente del texto de la tabla */
+    background-color: var(--color-fondo-bloque);
+}
+
+/*elementos de la tabla - columnas*/
+#tabla-episodios th {
+    background-color: #166534; /* Fondo verde para la cabecera */
+    color: white;
+    padding: 1rem; /* Relleno interno para mayor comodidad */
+    font-weight: bold; /* Negrita para destacar los encabezados */
+    text-transform: uppercase; /* Mayúsculas para los encabezados */
+}
+
+/* elementos de la tabla - filas */
+#tabla-episodios td {
+    padding: 1rem; /* Relleno interno para mayor comodidad */
+    border-bottom: 1px solid var(--color-input-borde); /* Línea divisoria entre filas */
+    color: var(--color-etiqueta);
+}
+
+/* interacciones de las filas de la tabla */
+#tabla-episodios tbody tr {
+    cursor: pointer; /* Cursor de mano sobre las filas */
+}
+
+/* efecto al pasar el mouse por las filas de la tabla */
+#tabla-episodios tbody tr:hover {
+    background-color: rgba(22, 101, 52, 0.15) !important; /* Resaltado verde al pasar el mouse */
+}
+
+/* efecto cebra para filas impares de la tabla */
+#tabla-episodios tbody tr:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.02); /* Efecto cebra claro */
+}
+
+/* efecto cebra para filas impares de la tabla en modo oscuro */
+body.dark-mode #tabla-episodios tbody tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.03); /* Efecto cebra oscuro */
+}
+
+/* ------------------------------ VENTANA MODAL (FICHA) ------------------------------------------------ */
+
+/* fondo oscuro del modal y contenedor del modal */
+.modal-fondo {
+    position: fixed; /* Fondo oscuro que cubre toda la pantalla */
+    top: 0;  /* Posición en la parte superior */
+    left: 0; /* Posición en la parte izquierda */
+    width: 100%;  /*usa el 100% de la anchura*/
+    height: 100%; /*usa el 100% de la altura*/
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex; /* Centrado del contenido del modal */
+    align-items: center; /* Centrado vertical */
+    justify-content: center;  /* Centrado horizontal */
+}
+
+/* clase para ocultar el modal */
+.modal-oculto {
+    display: none !important; /* Clase dinámica para esconder el modal */
+}
+
+/*contenedor del contenido de la ficha (modal)*/
+.modal-contenido-ficha {
+    background-color: var(--color-tarjeta-login);
+    padding: 1.2rem; /* Relleno interno para mayor comodidad */
+    border-radius: 8px; /* Bordes redondeados para un diseño más suave */
+    width: 95%; /*usa el 95% de la anchura*/
+    max-width: 420px; /*maxima anchura*/
+    display: flex; /* Organización interna vertical */
+    flex-direction: column; /* Alineación vertical de los elementos dentro del modal */
+    align-items: center; /* Centrado horizontal de los elementos dentro del modal */
+    gap: 0.7rem; /* Espacio entre los elementos dentro del modal */
+}
+
+/* titulo de la ficha (modal) */
+.titulo-ficha-centrado {
+    font-size: 1.5rem; /* tamaño de fuente del titulo de la ficha */
+    margin: 0; /*quita el margen por defecto*/
+    color: var(--color-texto-bienvenida);
+}
+
+/*imagen por defecto de la ficha*/
+.img-ficha-avatar {
+    width: 120px; /*anchura de la imagen*/
+    height: 120px; /*altura de la imagen*/
+    border-radius: 8px; /* Bordes redondeados para un diseño más suave */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    border: 3px solid #166534;
+}
+
+/* contenedor de los botones de la ficha (modal) */
+.contenedor-botones-ficha {
+    display: flex; /* Distribuye equitativamente los botones */
+    gap: 0.75rem; /* Espacio entre los botones */
+    width: 100%; /*usa el 100% de la anchura*/
+}
+
+/*clase de los botones de control de la ficha*/
+.btn-control-ficha {
+    flex: 1; /* Cada botón ocupa el mismo espacio disponible */
+    padding: 0.6rem; /* Relleno interno para mayor comodidad */
+    background-color: var(--color-boton-fondo);
+    color: var(--color-boton-texto);
+    border: 1px solid var(--color-input-borde); /*bordes*/
+    border-radius: 6px; /* Bordes redondeados para un diseño más suave */
+    font-weight: bold; /* Negrita para destacar el texto del botón */
+    cursor: pointer; /* Cursor de mano para indicar interactividad */
+}
+
+/* contennedor de los campos de la ficha */
+.contenedor-campos-ficha {
+    width: 100%; /*usa el 100% de la anchura */
+    display: flex; /* Organización interna vertical de los campos */ 
+    flex-direction: column; /* Alineación vertical de los campos dentro del contenedor */
+    gap: 0.85rem; /* Espacio entre los campos dentro del contenedor */
+}
+
+/* fila de cada campo de la ficha (modal) */
+.fila-campo-ficha {
+    display: flex; /* Alinea etiqueta a la izquierda e input a la derecha */
+    justify-content: space-between; /* Espacio entre etiqueta e input */
+    align-items: center; /* Centrado vertical de los elementos en la fila */
+    width: 100%; /*usa el 100% de la anchura */
+}
+
+/* label de "titulos" para cada campo de la ficha */
+.etiqueta-campo-ficha {
+    font-size: 0.85rem; /* tamaño de fuente de la etiqueta del campo */
+    font-weight: 600; /* negrita para destacar la etiqueta del campo */
+    color: white !important; /* Forzado a blanco para legibilidad en ambos modos */
+    width: 30%; /* usa el 30% del espacio de la anchura */
+}
+
+/* espacio de los datos + abierto a modificaciones */
+.rectangulo-campo-ficha {
+    width: 68%; /* usa el 68% del espacio de la anchura */
+    padding: 0.4rem 0.6rem; /* Relleno interno para mayor comodidad */
+    background-color: var(--color-input-fondo);
+    color: var(--color-etiqueta);
+    border: 1px solid var(--color-input-borde); /*bordes*/
+    border-radius: 4px; /* Bordes redondeados para un diseño más suave */
+}
+
+/* estilos para los campos de la ficha (modal) cuando están habilitados para edición */
+.rectangulo-campo-ficha:not(:disabled) {
+    background-color: white; /* Fondo blanco al estar editable */
+    color: black;
+}
